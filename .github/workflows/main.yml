@@ -15,7 +15,8 @@ jobs:
         run: |
         
           # Required Parameters
-          message=${{ github.head_ref }}.${{ github.sha }}
+          #message=${{ github.head_ref }}.${{ github.sha }}
+          message=${{ github.sha }}
           appId="app1"
           argoconfig="https://github.com/gajananan/argo-config"
           clusterconfig="https://github.com/gajananan/argocd-cluster-config"
