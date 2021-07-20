@@ -24,7 +24,7 @@ jobs:
           stage_image="gcr.io/signing-demo-project/akeme-signed-stage:0.1"
           prod_image="gcr.io/signing-demo-project/akeme-signed-prod:0.1"
                      
-          roles="[ {\"path\": "/roles/dev", \"image\": \"$dev_image\"}, {\"path\": "/roles/stage", \"image\": \"$stage_image\"},{\"path\": "/roles/prod", \"image\": \"$prod_image\"}]"           
+          roles="[ {\"path\": \"/roles/dev\", \"image\": \"$dev_image\"}, {\"path\": \"/roles/stage\", \"image\": \"$stage_image\"},{\"path\": \"/roles/prod\", \"image\": \"$prod_image\"}]"           
           echo "-----------------------"
           echo roles: "$roles"
           echo "-----------------------"
