@@ -24,11 +24,14 @@ jobs:
           stage_image="gcr.io/signing-demo-project/akeme-signed-stage:0.1"
           prod_image="gcr.io/signing-demo-project/akeme-signed-prod:0.1"
                      
-                     
-          echo Head Ref and Hash: $message
+          roles="\[ {\"path\": "roles/dev", \"image\": \"$dev_image\"}, {\"path\": "roles/stage", \"image\": \"$stage_image\"}  \]"           
+          echo "-----------------------"
+          echo roles: "$roles"
+          echo "-----------------------"
+          echo Commit Hash: $message
           
           curl --request POST \
           --url https://api.github.com/repos/gajananan/argo-github-action/dispatches \
           --header 'authorization: Bearer ${{ secrets.ARGOCD_BUILDER_ACTION_SECRET }}' \
           --header "Accept: application/vnd.github.v3+json" \
-          --data "{\"event_type\":\"webhook\", \"client_payload\": {\"commit_hash\": \"$message\", \"app\": \"$appId\", \"argo-config\": \"$argoconfig\", \"cluster-config\": \"$clusterconfig\", \"dev_image\": \"$dev_image\", \"stage_image\": \"$stage_image\", \"prod_image\": \"$prod_image\" }}" 
+          --data "{\"event_type\":\"webhook\", \"client_payload\": { \"roles\": \"$roles\",  \"commit_hash\": \"$message\", \"app\": \"$appId\", \"argo-config\": \"$argoconfig\", \"cluster-config\": \"$clusterconfig\", \"dev_image\": \"$dev_image\", \"stage_image\": \"$stage_image\", \"prod_image\": \"$prod_image\" }}" 
