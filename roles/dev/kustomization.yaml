@@ -1,5 +1,5 @@
 bases:
-- github.com/gajananan/akmebank-app/deploy/base?ref=master
+- github.com/gajananan/reverse-words-app/deploy/base?ref=master
 
 namespace: reverse-ns
 
