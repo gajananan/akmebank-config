@@ -9,7 +9,7 @@ images:
       newTag: 1.0.0
     - name: QUR_IMAGE_AND_TAG
       newName: quay.io/gajananan/account-query-ms
-      newTag: 3.0.0
+      newTag: 1.0.0
     - name: UI_IMAGE_AND_TAG
       newName: quay.io/gajananan/akmebank-ui
       newTag: 3.0.0
