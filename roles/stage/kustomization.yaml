@@ -1,7 +1,7 @@
 bases:
 - github.com/gajananan/akmebank-app/deploy/base?ref=master
 
-namespace: akmebank-stage-ns
+namespace: stage-ns
 
 images:
     - name: CMD_IMAGE_AND_TAG
