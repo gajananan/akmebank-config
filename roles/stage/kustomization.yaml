@@ -2,7 +2,7 @@ bases:
 - github.com/gajananan/akmebank-app/deploy/base?ref=master
 
 resources:
-    - ./signature_secret.yaml
+    - ./signature_config.yaml
     
 namespace: stage-ns
 
